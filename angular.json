@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "RedSocial"
+    }
+  },
+  "defaultProject": "RedSocial",
+  "cli": {
+    "analytics": "8a34c202-a897-4ea4-8648-bdbec8095cc0"
+  }
 }
