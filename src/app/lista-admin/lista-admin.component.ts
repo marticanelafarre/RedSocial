@@ -43,15 +43,16 @@ export class ListaAdminComponent implements OnInit {
       cancelButtonColor: '#d33',
       confirmButtonText: '¡Si, Eliminalo!',
     }).then((result) => {
-      this.ArrayAdmin.splice(i, 1);
       if (result.isConfirmed) {
         Swal.fire(
           'Eliminado!',
           'Tu personaje ha sido eliminado.',
           'success'
         )
+        this.ArrayAdmin.splice(i, 1);
       }
     })
+
 
   }
 }
