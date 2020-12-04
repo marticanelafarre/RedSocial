@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { usuarioObject } from 'src/app/models/usuarioObject';
 
 @Component({
   selector: 'app-lista-admin',
