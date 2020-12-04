@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { usuariObject } from 'src/app/models/character.model';
+
+
 
 @Component({
   selector: 'app-perfil-usuari',
@@ -6,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil-usuari.component.css']
 })
 export class PerfilUsuariComponent implements OnInit {
+
+  @Input() character: usuariObject;
+  @Output() saveEvent: EventEmitter<usuariObject> = new EventEmitter<usuariObject>();
+  @Output() deleteEvent: EventEmitter<usuariObject> = new EventEmitter<usuariObject>();
 
   constructor() { }
 

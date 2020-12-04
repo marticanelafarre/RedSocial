@@ -1,1 +1,26 @@
-<app-registre-usuari></app-registre-usuari>
+<div class="container">
+  <div class="row mt-3">
+
+    <div class="col">
+      <div class="list-group">
+        <a *ngFor="let usuariObject of charactersArray" class="list-group-item list-group-item-action"
+          (click)="selectCharacter(usuariObject)">{{usuariObject.nomUsuari}}</a>
+      </div>
+
+      <br>
+
+      <button type="button" class="btn btn-info" (click)="isCreatingNewChar = true">Add Character</button>
+
+    </div>
+    <div *ngIf="isCreatingNewChar === false" class="col">
+      <app-perfil-usuari [character]="characterSelected"></app-perfil-usuari >
+    </div>
+
+    <div *ngIf="isCreatingNewChar === true" class="col">
+
+      <app-registre-usuari (characterEvent)="addCharacter($event)"></app-registre-usuari>
+
+    </div>
+
+  </div>
+</div>
