@@ -35,17 +35,6 @@ export class ListaAdminComponent implements OnInit {
   }
 
   EliminarUsuario(i){
-<<<<<<< HEAD
-=======
-    this.ArrayAdmin.splice(i, 1);
-    Swal.fire(
-      'Usuario eliminado!',
-      'Usuario eliminado con éxito!',
-      'info'
-    )
-  }
->>>>>>> cb59d87ddf8ace0c137acf7dfcf8839deab4bb6f
-
     Swal.fire({
       title: '¿Seguro que lo quieres eliminar?',
       icon: 'warning',
