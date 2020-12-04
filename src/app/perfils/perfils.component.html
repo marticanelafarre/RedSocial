@@ -13,8 +13,7 @@
 
     </div>
     <div *ngIf="isCreatingNewChar === false" class="col">
-      <app-perfil-usuari [character]="characterSelected" (saveEvent)="updateCharacter($event)"
-        (deleteEvent)="deleteCharacter($event)"></app-perfil-usuari >
+      <app-perfil-usuari [character]="characterSelected"></app-perfil-usuari >
     </div>
 
     <div *ngIf="isCreatingNewChar === true" class="col">

@@ -18,11 +18,4 @@ export class PerfilUsuariComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveCharacter(): void {
-    this.saveEvent.emit(this.character);
-  }
-
-  deleteCharacter(): void {
-    this.deleteEvent.emit(this.character);
-  }
 }

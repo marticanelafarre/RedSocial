@@ -14,9 +14,9 @@ export class PerfilsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.charactersArray.push(new Character('Joan', 'Gonzalez', 18, "Hombre", "https://pm1.narvii.com/6795/d43d352e11d7f80b3fb95342e4ac67bbf9308ec2v2_hq.jpg" , "Luchador y apasionado", "joangonzalez@patata.com", "pepe" ));
-    this.charactersArray.push(new Character('Raul', 'Gimenez', 32, "Hombre", "https://i.pinimg.com/originals/23/01/b2/2301b2f2954e279cd03a138f3d1f992b.jpg" , "Emprendedor", "emprende@patata.com", "pepe" ));
-    this.charactersArray.push(new Character('Joana', 'Maria', 21, "Mujer", "https://img.huffingtonpost.com/asset/5d9c96b6200000d0024f6cf8.jpeg?cache=PPev0y55AD&ops=scalefit_720_noupscale" , "Chica fitness", "gimnasio@patata.com", "pepe" ));
+    this.charactersArray.push(new Character('Joan', 'Gonzalez', 18, 'Hombre', 'https://pm1.narvii.com/6795/d43d352e11d7f80b3fb95342e4ac67bbf9308ec2v2_hq.jpg', 'Luchador y apasionado', 'joangonzalez@patata.com', 'pepe'));
+    this.charactersArray.push(new Character('Joan', 'Gonzalez', 18, 'Hombre', 'https://pm1.narvii.com/6795/d43d352e11d7f80b3fb95342e4ac67bbf9308ec2v2_hq.jpg', 'Luchador y apasionado', 'joangonzalez@patata.com', 'pepe'));
+    this.charactersArray.push(new Character('Joan', 'Gonzalez', 18, 'Hombre', 'https://pm1.narvii.com/6795/d43d352e11d7f80b3fb95342e4ac67bbf9308ec2v2_hq.jpg', 'Luchador y apasionado', 'joangonzalez@patata.com', 'pepe'));
 
     // Cargamos el personaje que tengamos guardado previamente en memoria del navegador
     let character = localStorage.getItem('character');
@@ -52,40 +52,6 @@ export class PerfilsComponent implements OnInit {
 
     // Guardamos en el local storage del navegador el personaje seleccionado
     localStorage.setItem('character', JSON.stringify(character));
-  }
-
-  // Función para actualizar el personaje
-  updateCharacter(character: Character): void {
-
-    // Ponemos el valor en null para que desaparezcan los detalles
-    this.characterSelected = null;
-
-    // Buscamos un personaje con el mismo nombre y lo actualizamos
-    for (let i = 0; i < this.charactersArray.length; i++) {
-      if (this.charactersArray[i].nomUsuari === character.nomUsuari) {
-        this.charactersArray[i].edat = character.edat;
-
-      }
-    }
-  }
-
-  // Función para borrar un personaje
-  deleteCharacter(character: Character) {
-
-    // Ponemos el valor en null para que desaparezcan los detalles
-    this.characterSelected = null;
-
-    // Filtramos el array de personajes
-    this.charactersArray = this.charactersArray.filter(
-      (char: Character, index: number, array: Character[]) => {
-
-        // Si el nombre del personaje es diferente al que tenemos que borrar
-        if (char.nomUsuari !== character.nomUsuari) {
-
-          // Guardamos el personaje en el array filtrado
-          return char;
-        }
-      });
   }
 
   // Funcion para añadir un nuevo personaje en el array
