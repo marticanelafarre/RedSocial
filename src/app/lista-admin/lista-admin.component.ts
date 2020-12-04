@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Character} from 'src/app/models/character.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-lista-admin',
@@ -28,7 +29,11 @@ export class ListaAdminComponent implements OnInit {
 
   EliminarUsuario(i){
     this.ArrayAdmin.splice(i, 1);
-
+    Swal.fire(
+      'Usuario eliminado!',
+      'Usuario eliminado con éxito!',
+      'success'
+    )
   }
 
 }
