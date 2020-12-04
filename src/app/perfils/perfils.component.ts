@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Character } from '../models/character.model';
+import { usuariObject } from 'src/app/models/character.model';
 
 @Component({
   selector: 'app-perfils',
@@ -7,19 +7,19 @@ import { Character } from '../models/character.model';
   styleUrls: ['./perfils.component.css']
 })
 export class PerfilsComponent implements OnInit {
-  charactersArray: Character[] = [];
-  characterSelected: Character = null;
+  charactersArray: usuariObject[] = [];
+  characterSelected: usuariObject = null;
   isCreatingNewChar: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.charactersArray.push(new Character('Joan', 'Gonzalez', 18, 'Hombre', 'https://pm1.narvii.com/6795/d43d352e11d7f80b3fb95342e4ac67bbf9308ec2v2_hq.jpg', 'Luchador y apasionado', 'joangonzalez@patata.com', 'pepe'));
-    this.charactersArray.push(new Character('Joan', 'Gonzalez', 18, 'Hombre', 'https://pm1.narvii.com/6795/d43d352e11d7f80b3fb95342e4ac67bbf9308ec2v2_hq.jpg', 'Luchador y apasionado', 'joangonzalez@patata.com', 'pepe'));
-    this.charactersArray.push(new Character('Joan', 'Gonzalez', 18, 'Hombre', 'https://pm1.narvii.com/6795/d43d352e11d7f80b3fb95342e4ac67bbf9308ec2v2_hq.jpg', 'Luchador y apasionado', 'joangonzalez@patata.com', 'pepe'));
+    this.charactersArray.push(new usuariObject('Joan', 'Gonzalez', 18, 'Hombre', 'https://pm1.narvii.com/6795/d43d352e11d7f80b3fb95342e4ac67bbf9308ec2v2_hq.jpg', 'Luchador y apasionado', 'joangonzalez@patata.com', 'pepe'));
+    this.charactersArray.push(new usuariObject('Raul', 'Gimenez', 32, "Hombre", "https://i.pinimg.com/originals/23/01/b2/2301b2f2954e279cd03a138f3d1f992b.jpg" , "Emprendedor", "emprende@patata.com", "pepe" ));
+    this.charactersArray.push(new usuariObject('Joana', 'Maria', 21, "Mujer", "https://img.huffingtonpost.com/asset/5d9c96b6200000d0024f6cf8.jpeg?cache=PPev0y55AD&ops=scalefit_720_noupscale" , "Chica fitness", "gimnasio@patata.com", "pepe" ));
 
     // Cargamos el personaje que tengamos guardado previamente en memoria del navegador
-    let character = localStorage.getItem('character');
+    let character = localStorage.getItem('usuariObject');
     this.characterSelected = JSON.parse(character);
   }
   vacio: string;
@@ -42,7 +42,7 @@ export class PerfilsComponent implements OnInit {
   }
 
   // Función que se ejecuta al hacer click en un personaje de la lista
-  selectCharacter(character: Character): void {
+  selectCharacter(character: usuariObject): void {
 
     // Quitamos la interfaz de crear un personaje
     this.isCreatingNewChar = false;
@@ -55,7 +55,7 @@ export class PerfilsComponent implements OnInit {
   }
 
   // Funcion para añadir un nuevo personaje en el array
-  addCharacter(newCharacter: Character): void {
+  addCharacter(newCharacter: usuariObject): void {
     this.charactersArray.push(newCharacter);
   }
 }

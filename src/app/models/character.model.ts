@@ -1,4 +1,4 @@
-export class Character {
+export class usuariObject {
 
   constructor(
     public nomUsuari: string,

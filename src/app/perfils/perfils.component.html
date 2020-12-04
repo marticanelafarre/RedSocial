@@ -3,8 +3,8 @@
 
     <div class="col">
       <div class="list-group">
-        <a *ngFor="let character of charactersArray" class="list-group-item list-group-item-action"
-          (click)="selectCharacter(character)">{{character.nomUsuari}}</a>
+        <a *ngFor="let usuariObject of charactersArray" class="list-group-item list-group-item-action"
+          (click)="selectCharacter(usuariObject)">{{usuariObject.nomUsuari}}</a>
       </div>
 
       <br>
