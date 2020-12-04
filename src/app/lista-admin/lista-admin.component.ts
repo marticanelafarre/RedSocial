@@ -32,7 +32,7 @@ export class ListaAdminComponent implements OnInit {
     Swal.fire(
       'Usuario eliminado!',
       'Usuario eliminado con éxito!',
-      'success'
+      'info'
     )
   }
 
