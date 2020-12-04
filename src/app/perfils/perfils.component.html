@@ -1,1 +1,7 @@
-<p>perfils works!</p>
+<br>
+<br>
+<div class="container opciones">
+  <!-- mostramos las diferetes opciones, y en caso de seleccionar una, el valor se envia al ts y muestra su opcion correspondiente -->
+  <button type="button" name="button" value="registrar" (click)="elegirAccion($event)" class="btn btn-outline-info">Registrar usuario</button>
+  <app-registre-usuari *ngIf="(contenido) === 'registrar'" ></app-registre-usuari>
+</div>
