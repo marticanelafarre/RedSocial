@@ -14,6 +14,7 @@ export class ListaAdminComponent implements OnInit {
       nomUsuari: "Pepe",
       cognom: "Rodriguez",
       edat: 57,
+      sexe: "Hombre",
       foto: "",
       desc: "Amable",
       correu: "prova@gmail.com"
@@ -23,6 +24,7 @@ export class ListaAdminComponent implements OnInit {
       nomUsuari: "Ete",
       cognom: "Sech",
       edat: 35,
+      sexe: "Hombre",
       foto: "",
       desc: "Solidario",
       correu: "marticanela2015@gmail.com"
@@ -31,6 +33,7 @@ export class ListaAdminComponent implements OnInit {
       nomUsuari: "Sea",
       cognom: "Sech",
       edat: 14,
+      sexe: "Hombre",
       foto: "",
       desc: "Amable",
       correu: "marticanela2015@gmail.com"
@@ -39,6 +42,7 @@ export class ListaAdminComponent implements OnInit {
       nomUsuari: "Lea",
       cognom: "Sech",
       edat: 23,
+      sexe: "Hombre",
       foto: "",
       desc: "Solidario",
       correu: "marticanela2015@gmail.com"
@@ -47,6 +51,7 @@ export class ListaAdminComponent implements OnInit {
       nomUsuari: "Pea",
       cognom: "Sech",
       edat: 45,
+      sexe: "Hombre",
       foto: "",
       desc: "Amable",
       correu: "marticanela2015@gmail.com"
@@ -55,6 +60,7 @@ export class ListaAdminComponent implements OnInit {
       nomUsuari: "Rea",
       cognom: "Sech",
       edat: 25,
+      sexe: "Hombre",
       foto: "",
       desc: "Solidario",
       correu: "marticanela2015@gmail.com"

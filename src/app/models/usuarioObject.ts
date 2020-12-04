@@ -1,4 +1,4 @@
-export class usuariObject {
+export class usuarioObject {
 
   constructor(
     public nomUsuari: string,
@@ -8,6 +8,6 @@ export class usuariObject {
     public foto: string,
     public desc: string,
     public correu: string,
-    public password: string,
+    public password?: string,
   ){}
 }

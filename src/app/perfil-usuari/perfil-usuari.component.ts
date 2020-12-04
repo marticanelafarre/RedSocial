@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { usuariObject } from 'src/app/models/character.model';
+import { usuarioObject } from 'src/app/models/usuarioObject';
 
 
 
@@ -10,9 +10,9 @@ import { usuariObject } from 'src/app/models/character.model';
 })
 export class PerfilUsuariComponent implements OnInit {
 
-  @Input() character: usuariObject;
-  @Output() saveEvent: EventEmitter<usuariObject> = new EventEmitter<usuariObject>();
-  @Output() deleteEvent: EventEmitter<usuariObject> = new EventEmitter<usuariObject>();
+  @Input() character: usuarioObject;
+  @Output() saveEvent: EventEmitter<usuarioObject> = new EventEmitter<usuarioObject>();
+  @Output() deleteEvent: EventEmitter<usuarioObject> = new EventEmitter<usuarioObject>();
 
   constructor() { }
 
