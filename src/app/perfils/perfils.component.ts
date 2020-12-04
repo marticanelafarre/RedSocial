@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Character } from '../models/usuarioObject';
 
 @Component({
   selector: 'app-perfils',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfils.component.css']
 })
 export class PerfilsComponent implements OnInit {
-
+  character: Character[] = [];
+  characterSelected: Character = null;
   constructor() { }
 
   ngOnInit(): void {
+        // Cargamos el personaje que tengamos guardado previamente en memoria del navegador
+        let character = localStorage.getItem('character');
+        this.characterSelected = JSON.parse(character);
   }
   vacio: string;
   public contenido: string;
