@@ -26,6 +26,38 @@ export class ListaAdminComponent implements OnInit {
       foto: "",
       desc: "Solidario",
       correu: "marticanela2015@gmail.com"
+    },
+    {
+      nomUsuari: "Sea",
+      cognom: "Sech",
+      edat: 14,
+      foto: "",
+      desc: "Amable",
+      correu: "marticanela2015@gmail.com"
+    },
+    {
+      nomUsuari: "Lea",
+      cognom: "Sech",
+      edat: 23,
+      foto: "",
+      desc: "Solidario",
+      correu: "marticanela2015@gmail.com"
+    },
+    {
+      nomUsuari: "Pea",
+      cognom: "Sech",
+      edat: 45,
+      foto: "",
+      desc: "Amable",
+      correu: "marticanela2015@gmail.com"
+    },
+    {
+      nomUsuari: "Rea",
+      cognom: "Sech",
+      edat: 25,
+      foto: "",
+      desc: "Solidario",
+      correu: "marticanela2015@gmail.com"
     }
 ];
 
