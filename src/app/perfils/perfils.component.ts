@@ -12,9 +12,9 @@ export class PerfilsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-        // Cargamos el personaje que tengamos guardado previamente en memoria del navegador
-        let character = localStorage.getItem('character');
-        this.characterSelected = JSON.parse(character);
+    // Cargamos el personaje que tengamos guardado previamente en memoria del navegador
+    let character = localStorage.getItem('character');
+    this.characterSelected = JSON.parse(character);
   }
   vacio: string;
   public contenido: string;
@@ -33,5 +33,12 @@ export class PerfilsComponent implements OnInit {
       //en caso de no ser ninguna de las 3, se mostrara un espacio vacio
       this.vacio = "";
     }
+  }
+  // Función que se ejecuta al hacer click en un personaje de la lista
+  selectCharacter(character: Character): void {
+    // Guardamos en una variable de la clase el personaje seleccionado
+    this.characterSelected = character;
+    // Guardamos en el local storage del navegador el personaje seleccionado
+    localStorage.setItem('character', JSON.stringify(character));
   }
 }

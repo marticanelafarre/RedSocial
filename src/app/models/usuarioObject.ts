@@ -4,6 +4,7 @@ export class usuarioObject {
     public nomUsuari: string,
     public cognom: string,
     public edat: Int16Array,
+    public sexe: string,
     public foto: string,
     public desc: string,
     public correu: string,
