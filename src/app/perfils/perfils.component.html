@@ -1,18 +1,28 @@
-<br>
-<br>
-<div class="container ">
-  <div class="col">
-    <div class="list-group">
-      <a *ngFor="let character of character" class="list-group-item list-group-item-action"
-        (click)="selectCharacter(character)">{{character.name}}</a>
+<div class="container">
+  <div class="row mt-3">
+
+    <div class="col">
+      <div class="list-group">
+        <a *ngFor="let character of charactersArray" class="list-group-item list-group-item-action"
+          (click)="selectCharacter(character)">{{character.nomUsuari}}</a>
+      </div>
+
+      <br>
+
+      <button type="button" class="btn btn-info" (click)="isCreatingNewChar = true">Add Character</button>
+
     </div>
 
-    <br>
+    <!-- <div *ngIf="isCreatingNewChar === false" class="col">
+      <app-character [character]="characterSelected" (saveEvent)="updateCharacter($event)"
+        (deleteEvent)="deleteCharacter($event)"></app-character>
+    </div> -->
 
-    <button type="button" class="btn btn-info" (click)="isCreatingNewChar = true">Add Character</button>
+    <div *ngIf="isCreatingNewChar === true" class="col">
+
+      <app-registre-usuari (characterEvent)="addCharacter($event)"></app-registre-usuari>
+
+    </div>
 
   </div>
-  <!-- mostramos las diferetes opciones, y en caso de seleccionar una, el valor se envia al ts y muestra su opcion correspondiente -->
-  <button type="button" name="button" value="registrar" (click)="elegirAccion($event)" class="btn btn-outline-info">Registrar usuario</button>
-  <app-registre-usuari *ngIf="(contenido) === 'registrar'" ></app-registre-usuari>
 </div>
