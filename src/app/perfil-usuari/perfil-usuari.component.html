@@ -1,0 +1,18 @@
+<div *ngIf="character !== null" class="card" style="width: 18rem;">
+
+  <div class="card-body">
+    <h5 class="card-title">{{character.nomUsuari}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{character.edat}} anys</h6>
+    <form>
+      <div class="form-group">
+        <label for="strength">Edat</label>
+        <input type="number" class="form-control" id="strength" name="strength" [(ngModel)]="character.desc">
+      </div>
+
+    </form>
+
+    <button type="button" class="btn btn-primary" (click)="saveCharacter()">Save</button> &nbsp;
+    <button type="button" class="btn btn-danger" (click)="deleteCharacter()">Delete</button>
+  </div>
+
+</div>

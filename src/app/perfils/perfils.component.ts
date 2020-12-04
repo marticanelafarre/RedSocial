@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Character } from '../models/usuarioObject';
+import { Character } from '../models/character.model';
 
 @Component({
   selector: 'app-perfils',
@@ -9,6 +9,8 @@ import { Character } from '../models/usuarioObject';
 export class PerfilsComponent implements OnInit {
   charactersArray: Character[] = [];
   characterSelected: Character = null;
+  isCreatingNewChar: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -38,11 +40,56 @@ export class PerfilsComponent implements OnInit {
       this.vacio = "";
     }
   }
+
   // Función que se ejecuta al hacer click en un personaje de la lista
   selectCharacter(character: Character): void {
+
+    // Quitamos la interfaz de crear un personaje
+    this.isCreatingNewChar = false;
+
     // Guardamos en una variable de la clase el personaje seleccionado
     this.characterSelected = character;
+
     // Guardamos en el local storage del navegador el personaje seleccionado
     localStorage.setItem('character', JSON.stringify(character));
+  }
+
+  // Función para actualizar el personaje
+  updateCharacter(character: Character): void {
+
+    // Ponemos el valor en null para que desaparezcan los detalles
+    this.characterSelected = null;
+
+    // Buscamos un personaje con el mismo nombre y lo actualizamos
+    for (let i = 0; i < this.charactersArray.length; i++) {
+      if (this.charactersArray[i].nomUsuari === character.nomUsuari) {
+        this.charactersArray[i].edat = character.edat;
+
+      }
+    }
+  }
+
+  // Función para borrar un personaje
+  deleteCharacter(character: Character) {
+
+    // Ponemos el valor en null para que desaparezcan los detalles
+    this.characterSelected = null;
+
+    // Filtramos el array de personajes
+    this.charactersArray = this.charactersArray.filter(
+      (char: Character, index: number, array: Character[]) => {
+
+        // Si el nombre del personaje es diferente al que tenemos que borrar
+        if (char.nomUsuari !== character.nomUsuari) {
+
+          // Guardamos el personaje en el array filtrado
+          return char;
+        }
+      });
+  }
+
+  // Funcion para añadir un nuevo personaje en el array
+  addCharacter(newCharacter: Character): void {
+    this.charactersArray.push(newCharacter);
   }
 }

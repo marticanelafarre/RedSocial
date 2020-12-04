@@ -12,11 +12,10 @@
       <button type="button" class="btn btn-info" (click)="isCreatingNewChar = true">Add Character</button>
 
     </div>
-
-    <!-- <div *ngIf="isCreatingNewChar === false" class="col">
-      <app-character [character]="characterSelected" (saveEvent)="updateCharacter($event)"
-        (deleteEvent)="deleteCharacter($event)"></app-character>
-    </div> -->
+    <div *ngIf="isCreatingNewChar === false" class="col">
+      <app-perfil-usuari [character]="characterSelected" (saveEvent)="updateCharacter($event)"
+        (deleteEvent)="deleteCharacter($event)"></app-perfil-usuari >
+    </div>
 
     <div *ngIf="isCreatingNewChar === true" class="col">
 
