@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Character} from 'src/app/models/character.model';
+import { usuarioObject} from 'src/app/models/usuarioObject';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -9,16 +9,23 @@ import Swal from 'sweetalert2';
 })
 export class ListaAdminComponent implements OnInit {
 
-  ArrayAdmin: Character[]=[
+  ArrayAdmin: usuarioObject[]=[
     {
-      nombre:"marti"
-
+      nomUsuari: "Pepe",
+      cognom: "Rodriguez",
+      edat: 57,
+      foto: "",
+      desc: "Amable",
+      correu: "prova@gmail.com"
 
     },
     {
-      nombre:"alex"
-
-
+      nomUsuari: "Ete",
+      cognom: "Sech",
+      edat: 35,
+      foto: "",
+      desc: "Solidario",
+      correu: "marticanela2015@gmail.com"
     }
 ];
 
@@ -28,12 +35,24 @@ export class ListaAdminComponent implements OnInit {
   }
 
   EliminarUsuario(i){
-    this.ArrayAdmin.splice(i, 1);
-    Swal.fire(
-      'Usuario eliminado!',
-      'Usuario eliminado con éxito!',
-      'success'
-    )
-  }
 
+    Swal.fire({
+      title: '¿Seguro que lo quieres eliminar?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: '¡Si, Eliminalo!',
+    }).then((result) => {
+      this.ArrayAdmin.splice(i, 1);
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Eliminado!',
+          'Tu personaje ha sido eliminado.',
+          'success'
+        )
+      }
+    })
+
+  }
 }

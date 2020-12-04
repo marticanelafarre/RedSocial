@@ -1,8 +1,11 @@
 <div class="container">
   <div *ngFor="let Character of ArrayAdmin; let i=index">
-    <p>Nombre: {{Character.nombre}}</p>
-
-    <button class="btn btn-info" (click)="EliminarUsuario(i)">Eliminar</button>
+    <p><b>Nombre:</b> {{Character.nomUsuari}}</p>
+    <p><b>Apellido:</b> {{Character.cognom}}</p>
+    <p><b>Edad:</b> {{Character.edat}}</p>
+    <p><b>Descripcion:</b>{{Character.desc}}</p>
+    <p><b>Correo:</b> {{Character.correu}}</p>
+    <button class="btn btn-danger" (click)="EliminarUsuario(i)">Eliminar</button>
   </div>
 </div>
 
