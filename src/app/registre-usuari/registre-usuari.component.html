@@ -43,7 +43,7 @@
         </div>
         <div class="form-group">
             <label>Descripció</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" type="text" placeholder="Descripció" formControlName="desc" class="form-control" [ngClass]="{'is-invalid': submitted && f.desc.errors}" #desc></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" type="text" placeholder="Descripció" formControlName="desc" class="form-control" [ngClass]="{'is-invalid': submitted && f.desc.errors}" #descr></textarea>
             <div *ngIf="submitted  && f.desc.errors" class="invalid-feedback">
                 <div *ngIf="f.desc.errors.required">La descripció es obligatoria</div>
             </div>

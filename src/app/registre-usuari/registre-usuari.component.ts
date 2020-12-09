@@ -36,12 +36,12 @@ export class RegistreUsuariComponent implements OnInit {
     this.usuario = this.formBuilder.group({
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
-      edad: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(0)]],
       sexo: ['', Validators.required],
       foto: ['', Validators.required],
-      descr: ['', Validators.required],
       correo: ['', [Validators.required, Validators.email]],
+      descr: ['', Validators.required],
       password: ['', Validators.required],
+      edad: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(0)]],
       password2: ['', Validators.required]
     })
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { usuarioObject } from 'src/app/models/usuarioObject';
 
 @Component({
@@ -10,6 +10,9 @@ export class PerfilsComponent implements OnInit {
   charactersArray: usuarioObject[] = [];
   characterSelected: usuarioObject = null;
   isCreatingNewChar: boolean = false;
+  @Input() character: usuarioObject;
+  @Output() saveEvent: EventEmitter<usuarioObject> = new EventEmitter<usuarioObject>();
+  @Output() deleteEvent: EventEmitter<usuarioObject> = new EventEmitter<usuarioObject>();
 
   constructor() { }
 
@@ -55,7 +58,11 @@ export class PerfilsComponent implements OnInit {
   }
 
   // Funcion para añadir un nuevo personaje en el array
-  addCharacter(newCharacter: usuarioObject): void {
-    this.charactersArray.push(newCharacter);
+  addCharacter(eventoHijo): void {
+    this.charactersArray.push(new usuarioObject(eventoHijo.nomUsuari,eventoHijo.cognom, eventoHijo.edat, eventoHijo.sexe, eventoHijo.foto, eventoHijo.desc, eventoHijo.correu,eventoHijo.password));
   }
+ anadirUsuario(eventoHijo) {
+    this.charactersArray.push(new usuarioObject(eventoHijo.nomUsuari,eventoHijo.cognom, eventoHijo.edat, eventoHijo.sexe, eventoHijo.foto, eventoHijo.desc, eventoHijo.correu,eventoHijo.password));
+  }
+
 }
