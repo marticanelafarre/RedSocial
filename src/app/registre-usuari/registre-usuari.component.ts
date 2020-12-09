@@ -21,9 +21,11 @@ export class RegistreUsuariComponent implements OnInit {
   linea = new usuarioObject('','',null,'','','','');
   usuario: FormGroup;
   submitted = false;
+  myForm: FormGroup;
+
   constructor(private formBuilder: FormBuilder) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.usuario = this.formBuilder.group({
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
@@ -32,8 +34,8 @@ export class RegistreUsuariComponent implements OnInit {
       correo: ['', [Validators.required, Validators.email]],
       desc: ['', Validators.required],
       password: ['', Validators.required],
-      edad: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(0)]],
-      password2: ['', Validators.required]
+      edad: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(0)]]
+      // password2: ['', Validators.required]
     })
   }
 
@@ -42,7 +44,11 @@ export class RegistreUsuariComponent implements OnInit {
     return this.usuario.controls;
   }
 
-  Enviardatos():void{
+  Enviardatos(){
+    this.submitted = true;
+    if (this.usuario.invalid) {
+      return;
+    }
     this.emitirDatos.emit(this.linea)
   }
 

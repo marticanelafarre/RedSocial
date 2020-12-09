@@ -2,7 +2,7 @@
     <form [formGroup]="usuario">
         <div class="form-group">
             <label>Nombre</label>
-            <input type="text" placeholder="Nombre" [(ngModel)]="linea.nomUsuari" formControlName="nombre" class="form-control" [ngClass]="{'is-invalid': submitted && f.nombre.errors}" #nomUsuari>
+            <input type="text" placeholder="Nombre" [(ngModel)]="linea.nomUsuari" [ngClass]="{'is-invalid': submitted && f.nombre.errors}" formControlName="nombre" class="form-control" #nomUsuari>
             <div *ngIf="submitted  && f.nombre.errors" class="invalid-feedback">
                 <div *ngIf="f.nombre.errors.required">El nom es obligatori</div>
             </div>
@@ -26,10 +26,10 @@
         <div class="form-group">
             <label>Sexe</label>
             <div class="radio">
-                <label><input type="radio" name="sexe" checked formControlName="sexo"  [ngClass]="{'is-invalid': submitted && f.sexo.errors}" value="Home" #sexe> Home</label>
+                <label><input type="radio" name="sexo" checked formControlName="sexo"  [ngClass]="{'is-invalid': submitted && f.sexo.errors}" value="Home" #sexe> Home</label>
             </div>
             <div class="radio">
-                <label><input type="radio" name="sexe" formControlName="sexo" [ngClass]="{'is-invalid': submitted && f.sexo.errors}" value="Dona" #sexe> Dona</label>
+                <label><input type="radio" name="sexo" formControlName="sexo" [ngClass]="{'is-invalid': submitted && f.sexo.errors}" value="Dona" #sexe> Dona</label>
             </div>
             <div *ngIf="submitted  && f.sexo.errors" class="invalid-feedback">
                 <div *ngIf="f.sexo.errors.required">Selecciona un sexe</div>
@@ -66,16 +66,18 @@
                 <div *ngIf="f.password.errors.required">La Contrasenya es obligatoria</div>
             </div>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label>Confirmar contrasenya</label>
             <input type="password" placeholder="Contrasenya" formControlName="password" class="form-control" [ngClass]="{'is-invalid': submitted && f.password2.errors}" #password2>
             <div *ngIf="submitted  && f.password2.errors" class="invalid-feedback">
                 <div *ngIf="f.password2.errors.required">La Contrasenya es obligatoria</div>
             </div>
-        </div>
+        </div> -->
         <div class="form-group">
             <button class="btn btn-primary" (click)="Enviardatos()">Enviar</button>
         </div>
     </form>
 </div>
 <br><br><br><br>
+
+<!-- (click)="Enviardatos()" -->
