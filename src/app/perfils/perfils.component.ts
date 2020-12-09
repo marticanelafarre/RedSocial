@@ -19,7 +19,7 @@ export class PerfilsComponent implements OnInit {
   ngOnInit(): void {
     this.charactersArray.push(new usuarioObject('Joan', 'Gonzalez', 18, 'Hombre', 'https://pm1.narvii.com/6795/d43d352e11d7f80b3fb95342e4ac67bbf9308ec2v2_hq.jpg', 'Luchador y apasionado', 'joangonzalez@patata.com', 'pepe'));
     this.charactersArray.push(new usuarioObject('Raul', 'Gimenez', 32, "Hombre", "https://i.pinimg.com/originals/23/01/b2/2301b2f2954e279cd03a138f3d1f992b.jpg" , "Emprendedor", "emprende@patata.com", "pepe" ));
-    this.charactersArray.push(new usuarioObject('Joana', 'Maria', 21, "Mujer", "https://img.huffingtonpost.com/asset/5d9c96b6200000d0024f6cf8.jpeg?cache=PPev0y55AD&ops=scalefit_720_noupscale" , "Chica fitness", "gimnasio@patata.com", "pepe" ));
+    this.charactersArray.push(new usuarioObject('Joana', 'Maria', 21, "Mujer", "https://okdiario.com/img/2019/08/26/personajes-de-animacion-mas-famosos-655x368.jpg" , "Chica fitness", "gimnasio@patata.com", "pepe" ));
 
     // Cargamos el personaje que tengamos guardado previamente en memoria del navegador
     let character = localStorage.getItem('usuarioObject');

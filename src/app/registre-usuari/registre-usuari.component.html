@@ -25,7 +25,7 @@
         <div *ngIf="f.edad.errors.pattern">L'edat ha de ser numerica</div>
       </div>
     </div>
-    <!-- <div class="form-group">
+    <div class="form-group">
             <label>Sexe</label>
             <div class="radio">
                 <label><input type="radio" name="sexe" checked formControlName="sexo"  [ngClass]="{'is-invalid': submitted && f.sexo.errors}" value="Home" #sexe> Home</label>
@@ -36,7 +36,7 @@
             <div *ngIf="submitted  && f.sexo.errors" class="invalid-feedback">
                 <div *ngIf="f.sexo.errors.required">Selecciona un sexe</div>
             </div>
-        </div> -->
+        </div>
     <div class="form-group">
       <label>Foto perfil (URL)</label>
       <input type="text" placeholder="URL" [(ngModel)]="linea.foto" formControlName="foto" class="form-control"
@@ -73,37 +73,18 @@
         <div *ngIf="f.password.errors.required">La Contrasenya es obligatoria</div>
       </div>
     </div>
-    <!-- <div class="form-group">
+    <div class="form-group">
       <label>Confirmar contrasenya</label>
       <input type="password" placeholder="Contrasenya" formControlName="password" class="form-control"
         [ngClass]="{'is-invalid': submitted && f.password2.errors}" #password2>
       <div *ngIf="submitted  && f.password2.errors" class="invalid-feedback">
         <div *ngIf="f.password2.errors.required">La Contrasenya es obligatoria</div>
       </div>
-    </div> -->
+    </div>
     <div class="form-group">
       <button class="btn btn-primary"
-        (click)="Enviardatos(nomUsuari, cognom, edat, foto, desc, correu, password)">Enviar</button>
+        (click)="Enviardatos()">Enviar</button>
     </div>
   </form>
 </div>
-
-<!-- <div class="container">
-    <form>
-        <div class="card">
-            <h5 class="card-header">Registrar:</h5>
-            <div class="form-group mx-sm-5">
-                <p>Nombre: <input type="text" class="form-control" id="nomUsuari"></p>
-                <p>Apellido: <input type="text" class="form-control" #cognom id="cognom"></p>
-                <p>Edad: <input type="number" class="form-control" #edat id="edat"></p>
-                <p>Foto: <input type="text" class="form-control" #foto id="foto"></p>
-                <p>Descripcion: <input type="text" class="form-control" #desc id="desc"></p>
-                <p>Correo: <input type="text" class="form-control" #correu id="correu"></p>
-                <p>Contraseña: <input type="text" class="form-control" #password id="password"></p>
-            </div>
-            <button type="submit" class="btn btn-primary">Registrar</button>
-        </div>
-    </form>
-</div> -->
 <br><br><br><br>
-<!-- (click)="Enviardatos(nomUsuari, cognom, edat, foto, desc, correu, password)" -->

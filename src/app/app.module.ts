@@ -10,9 +10,6 @@ import { RegistreUsuariComponent } from './registre-usuari/registre-usuari.compo
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PerfilsComponent } from './perfils/perfils.component';
-import { RegistroComponent } from './registro/registro.component';
-import { LlistaComponent } from './llista/llista.component';
-import { DetallsComponent } from './detalls/detalls.component';
 import { AdminComponent } from './admin/admin.component';
 import { ListaAdminComponent } from './lista-admin/lista-admin.component';
 
@@ -25,9 +22,6 @@ import { ListaAdminComponent } from './lista-admin/lista-admin.component';
     HeaderComponent,
     FooterComponent,
     PerfilsComponent,
-    RegistroComponent,
-    LlistaComponent,
-    DetallsComponent,
     AdminComponent,
     ListaAdminComponent,
   ],
