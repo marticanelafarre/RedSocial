@@ -18,18 +18,9 @@ export class RegistreUsuariComponent implements OnInit {
   @Output() eventos: usuarioObject[];
   @Output() emitirDatos = new EventEmitter<usuarioObject>();
 
+  linea = new usuarioObject('','',0,'','','','');
   usuario: FormGroup;
   submitted = false;
-
-  public nombre = '';
-  public apellido = '';
-  public edad: number = null;
-  public sexo = '';
-  public foto = '';
-  public descr = '';
-  public correo = '';
-  public password = '';
-
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -39,7 +30,7 @@ export class RegistreUsuariComponent implements OnInit {
       sexo: ['', Validators.required],
       foto: ['', Validators.required],
       correo: ['', [Validators.required, Validators.email]],
-      descr: ['', Validators.required],
+      desc: ['', Validators.required],
       password: ['', Validators.required],
       edad: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(0)]],
       password2: ['', Validators.required]
@@ -51,21 +42,12 @@ export class RegistreUsuariComponent implements OnInit {
     return this.usuario.controls;
   }
 
-  Enviardatos(nomUsuari, cognom, edat, sexe, foto, descr, correu, password) {
-     this.nombre = nomUsuari;
-     this.apellido = cognom;
-     this.edad = edat;
-     this.sexo =sexe ;
-     this.foto = foto ;
-     this.descr = descr;
-     this.correo = correu;
-     this.password = password;
-    this.submitted = true;
-    if (this.usuario.invalid) {
-      return;
-    }
-    this.emitirDatos.emit({nomUsuari: this.nombre, cognom: this.apellido, edat: this.edad, foto: this.foto, sexe: this.sexo, desc: this.descr, correu: this.correo, password: this.password });
+  Enviardatos():void{
+    this.emitirDatos.emit(this.linea)
     Swal.fire("Los datos son correctos")
+    console.log(this.linea);
+
+
   }
 
 }
