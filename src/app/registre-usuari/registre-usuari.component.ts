@@ -45,9 +45,6 @@ export class RegistreUsuariComponent implements OnInit {
   Enviardatos():void{
     this.emitirDatos.emit(this.linea)
     Swal.fire("Los datos son correctos")
-    console.log(this.linea);
-
-
   }
 
 }

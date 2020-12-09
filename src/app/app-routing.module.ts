@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
-import { HomeComponent } from './home/home.component';
 import { PerfilUsuariComponent } from './perfil-usuari/perfil-usuari.component';
 import { PerfilsComponent } from './perfils/perfils.component';
 import { RegistreUsuariComponent } from './registre-usuari/registre-usuari.component';
@@ -9,8 +8,7 @@ import { ListaAdminComponent } from './lista-admin/lista-admin.component';
 
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'home'},
-  {path: 'home', component: HomeComponent},
+  {path: '', pathMatch: 'full', redirectTo: 'perfils'},
   {path: 'perfils', component: PerfilsComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'perfilUsuari', component: PerfilUsuariComponent},
