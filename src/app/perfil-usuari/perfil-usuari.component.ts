@@ -10,9 +10,10 @@ import { usuarioObject } from 'src/app/models/usuarioObject';
 })
 export class PerfilUsuariComponent implements OnInit {
 
+
+  //INPUT PARA SABER LA INFORMACION
   @Input() character: usuarioObject;
-  @Output() saveEvent: EventEmitter<usuarioObject> = new EventEmitter<usuarioObject>();
-  @Output() deleteEvent: EventEmitter<usuarioObject> = new EventEmitter<usuarioObject>();
+
 
   constructor() { }
 

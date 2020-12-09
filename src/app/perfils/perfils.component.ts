@@ -11,16 +11,19 @@ export class PerfilsComponent implements OnInit {
   charactersArray: usuarioObject[] = [];
   characterSelected: usuarioObject = null;
   isCreatingNewChar: boolean = false;
+
+  //importamos los inputs del objeto usuario
   @Input() character: usuarioObject;
-  @Output() saveEvent: EventEmitter<usuarioObject> = new EventEmitter<usuarioObject>();
-  @Output() deleteEvent: EventEmitter<usuarioObject> = new EventEmitter<usuarioObject>();
+
 
   constructor() { }
 
   ngOnInit(): void {
-    this.charactersArray.push(new usuarioObject('Joan', 'Gonzalez', 18, 'Hombre', 'https://pm1.narvii.com/6795/d43d352e11d7f80b3fb95342e4ac67bbf9308ec2v2_hq.jpg', 'Luchador y apasionado', 'joangonzalez@patata.com', 'pepe'));
-    this.charactersArray.push(new usuarioObject('Raul', 'Gimenez', 32, "Hombre", "https://i.pinimg.com/originals/23/01/b2/2301b2f2954e279cd03a138f3d1f992b.jpg" , "Emprendedor", "emprende@patata.com", "pepe" ));
-    this.charactersArray.push(new usuarioObject('Joana', 'Maria', 21, "Mujer", "https://okdiario.com/img/2019/08/26/personajes-de-animacion-mas-famosos-655x368.jpg" , "Chica fitness", "gimnasio@patata.com", "pepe" ));
+
+    //AÑADIMOS NUEVOS USUARIOS
+    this.charactersArray.push(new usuarioObject('Joan', 'Gonzalez', 18, '14549539S', 'https://pm1.narvii.com/6795/d43d352e11d7f80b3fb95342e4ac67bbf9308ec2v2_hq.jpg', 'Luchador y apasionado', 'joangonzalez@patata.com', 'pepe'));
+    this.charactersArray.push(new usuarioObject('Raul', 'Gimenez', 32, "12083340Z", "https://i.pinimg.com/originals/23/01/b2/2301b2f2954e279cd03a138f3d1f992b.jpg" , "Emprendedor", "emprende@patata.com", "pepe" ));
+    this.charactersArray.push(new usuarioObject('Joana', 'Maria', 21, "41795311X", "https://okdiario.com/img/2019/08/26/personajes-de-animacion-mas-famosos-655x368.jpg" , "Chica fitness", "gimnasio@patata.com", "pepe" ));
 
     // Cargamos el personaje que tengamos guardado previamente en memoria del navegador
     let character = localStorage.getItem('usuarioObject');
@@ -28,9 +31,6 @@ export class PerfilsComponent implements OnInit {
   }
   vacio: string;
   public contenido: string;
-  mostrarError: string = "";
-  mostrarError2: string = "";
-  mostrarError3: string = "";
   mailPatt = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   //esta funcion lo que hace es mostrarnos iferentes contenedores de el componente Eventos dependiendo de su opcion seleccionada.
@@ -61,7 +61,7 @@ export class PerfilsComponent implements OnInit {
   // Funcion para añadir un nuevo personaje en el array
  anadirUsuario(eventoHijo) {
     this.charactersArray.push(new usuarioObject(eventoHijo.nomUsuari,eventoHijo.cognom, eventoHijo.edat, eventoHijo.sexe, eventoHijo.foto, eventoHijo.desc, eventoHijo.correu,eventoHijo.password));
-    Swal.fire("Los datos son correctos")
+    Swal.fire("Añadido correctamente")
   }
 
 }
