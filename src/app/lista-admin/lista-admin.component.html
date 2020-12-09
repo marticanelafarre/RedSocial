@@ -1,0 +1,21 @@
+
+
+
+<br>
+<div class="container">
+
+  <ul *ngFor="let usuarioObject of ArrayAdmin; let i=index">
+    <div class="card">
+      <h5 class="card-header"> {{usuarioObject.nomUsuari}}</h5>
+      <div class="card-body">
+        <p class="card-text"><b>Apellido: </b> {{usuarioObject.cognom}}</p>
+        <p class="card-text"><b>Edad: </b> {{usuarioObject.edat}}</p>
+        <p class="card-text"><b>Descripcion: </b>{{usuarioObject.desc}}</p>
+        <p class="card-text"><b>Apellido: </b> {{usuarioObject.cognom}}</p>
+        <p class="card-text"><b>Correo: </b> {{usuarioObject.correu}}</p>
+
+        <button class="btn btn-danger" (click)="EliminarUsuario(i)">Eliminar</button>
+      </div>
+    </div>
+  </ul>
+</div>

@@ -1,0 +1,74 @@
+<div class="container">
+    <!-- para realizar el formulario reactivo debemos marcar la clsse formGroup con la que trabajamos -->
+    <form [formGroup]="usuario">
+
+        <!-- El proceso acontinuacion es el mismo, debemos poner un NgModel con la variable de objeto del ts, en este caso "linea" con el valor al que pertica, y por ultimo ngClass con los errores puestos en los validators -->
+
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" placeholder="Nombre" [(ngModel)]="linea.nomUsuari" [ngClass]="{'is-invalid': submitted && f.nombre.errors}" formControlName="nombre" class="form-control" #nomUsuari>
+            <div *ngIf="submitted  && f.nombre.errors" class="invalid-feedback">
+                <div *ngIf="f.nombre.errors.required">El nom es obligatori</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Cognom</label>
+            <input type="text" placeholder="Cognom" [(ngModel)]="linea.cognom" formControlName="apellido" class="form-control" [ngClass]="{'is-invalid': submitted && f.apellido.errors}" #cognom>
+            <div *ngIf="submitted  && f.apellido.errors" class="invalid-feedback">
+                <div *ngIf="f.apellido.errors.required">El Cognom es obligatori</div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label>DNI</label>
+            <input type="text" placeholder="DNI" [(ngModel)]="linea.DNI" formControlName="DNI" class="form-control" [ngClass]="{'is-invalid': submitted && f.DNI.errors}" #DNI>
+            <div *ngIf="submitted  && f.DNI.errors" class="invalid-feedback">
+                <div *ngIf="f.DNI.errors.required">El DNI es obligatori</div>
+                <div *ngIf="f.DNI.errors.pattern">El DNI no es válid</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Edat</label>
+            <input type="text" placeholder="Edat" [(ngModel)]="linea.edat" formControlName="edad" class="form-control" [ngClass]="{'is-invalid': submitted && f.edad.errors}" #edat>
+            <div *ngIf="submitted  && f.edad.errors" class="invalid-feedback">
+                <div *ngIf="f.edad.errors.required">L'edat es obligatoria</div>
+                <div *ngIf="f.edad.errors.pattern">L'edat ha de ser numerica</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Foto perfil (URL)</label>
+            <input type="text" placeholder="URL" [(ngModel)]="linea.foto" formControlName="foto" class="form-control" [ngClass]="{'is-invalid': submitted && f.foto.errors}" #foto>
+            <div *ngIf="submitted  && f.foto.errors" class="invalid-feedback">
+                <div *ngIf="f.foto.errors.required">La foto es obligatoria</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Descripció</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="linea.desc" rows="3" type="text" placeholder="Descripció" formControlName="desc" class="form-control" [ngClass]="{'is-invalid': submitted && f.desc.errors}" #desc></textarea>
+            <div *ngIf="submitted  && f.desc.errors" class="invalid-feedback">
+                <div *ngIf="f.desc.errors.required">La descripció es obligatoria</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Correo</label>
+            <input type="email" placeholder="Correo" [(ngModel)]="linea.correu" formControlName="correo" class="form-control" [ngClass]="{'is-invalid': submitted && f.correo.errors}" #correu>
+            <div *ngIf="submitted  && f.correo.errors" class="invalid-feedback">
+                <div *ngIf="f.correo.errors.required">El Correo es obligatorio</div>
+                <div *ngIf="f.correo.errors.email">El Correo no es valido</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Contrasenya</label>
+            <input type="password" placeholder="Contrasenya" [(ngModel)]="linea.password" formControlName="password" class="form-control" [ngClass]="{'is-invalid': submitted && f.password.errors}" #password>
+            <div *ngIf="submitted  && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">La Contrasenya es obligatoria</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-info" (click)="Enviardatos()">Enviar</button>
+        </div>
+    </form>
+</div>
+<br><br><br><br>
