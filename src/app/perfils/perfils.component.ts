@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { usuarioObject } from 'src/app/models/usuarioObject';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-perfils',
@@ -58,11 +59,9 @@ export class PerfilsComponent implements OnInit {
   }
 
   // Funcion para añadir un nuevo personaje en el array
-  addCharacter(eventoHijo): void {
-    this.charactersArray.push(new usuarioObject(eventoHijo.nomUsuari,eventoHijo.cognom, eventoHijo.edat, eventoHijo.sexe, eventoHijo.foto, eventoHijo.desc, eventoHijo.correu,eventoHijo.password));
-  }
  anadirUsuario(eventoHijo) {
     this.charactersArray.push(new usuarioObject(eventoHijo.nomUsuari,eventoHijo.cognom, eventoHijo.edat, eventoHijo.sexe, eventoHijo.foto, eventoHijo.desc, eventoHijo.correu,eventoHijo.password));
+    Swal.fire("Los datos son correctos")
   }
 
 }

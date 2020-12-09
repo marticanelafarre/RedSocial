@@ -18,7 +18,7 @@ export class RegistreUsuariComponent implements OnInit {
   @Output() eventos: usuarioObject[];
   @Output() emitirDatos = new EventEmitter<usuarioObject>();
 
-  linea = new usuarioObject('','',0,'','','','');
+  linea = new usuarioObject('','',null,'','','','');
   usuario: FormGroup;
   submitted = false;
   constructor(private formBuilder: FormBuilder) { }
@@ -44,7 +44,6 @@ export class RegistreUsuariComponent implements OnInit {
 
   Enviardatos():void{
     this.emitirDatos.emit(this.linea)
-    Swal.fire("Los datos son correctos")
   }
 
 }
