@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { usuarioObject } from 'src/app/models/usuarioObject';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-lista-admin',
@@ -70,5 +71,25 @@ export class ListaAdminComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  EliminarUsuario(i){
+    Swal.fire({
+      title: '¿Seguro que lo quieres eliminar?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: '¡Si, Eliminalo!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Eliminado!',
+          'Tu personaje ha sido eliminado.',
+          'success'
+        )
+        this.ArrayAdmin.splice(i, 1);
+      }
+    })
 
+}
 }

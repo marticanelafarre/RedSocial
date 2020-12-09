@@ -21,6 +21,7 @@
     "@angular/router": "~10.2.0",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
+    "ng-validate-equal": "^1.0.4",
     "popper.js": "^1.16.1",
     "rxjs": "~6.6.0",
     "sweetalert2": "^10.11.1",
